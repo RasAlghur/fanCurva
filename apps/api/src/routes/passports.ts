@@ -1,7 +1,8 @@
 import { Hono } from 'hono'
 import { db } from '../lib/db'
 
-const passports = new Hono()
+type Variables = { privy_user_id: string }
+const passports = new Hono<{ Variables: Variables }>()
 
 // GET /passports/:user_id
 passports.get('/:user_id', async (c) => {

@@ -2,7 +2,8 @@ import { Hono } from 'hono'
 import { db } from '../lib/db'
 import { requireAuth } from '../middleware/auth'
 
-const quests = new Hono()
+type Variables = { privy_user_id: string }
+const quests = new Hono<{ Variables: Variables }>()
 
 async function checkAndAwardReferralMilestone(user_id: string, milestone: string) {
   try {

@@ -2,7 +2,8 @@ import { Hono } from 'hono'
 import { db } from '../lib/db'
 import { requireAuth } from '../middleware/auth'
 
-const users = new Hono()
+type Variables = { privy_user_id: string }
+const users = new Hono<{ Variables: Variables }>()
 
 // GET /users/me — get current authenticated user
 users.get('/me', requireAuth, async (c) => {

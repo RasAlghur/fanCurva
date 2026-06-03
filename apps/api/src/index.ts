@@ -12,6 +12,7 @@ import points from './routes/points'
 import passports from './routes/passports'
 import badges from './routes/badges'
 import referrals from './routes/referrals'
+import watchParties from './routes/watchParties'
 
 const app = new Hono()
 
@@ -32,6 +33,7 @@ app.route('/points', points)
 app.route('/quests', quests)
 app.route('/referrals', referrals)
 app.route('/users', users)
+app.route('/watch-parties', watchParties)
 
 // ── Health check ───────────────────────────────────
 app.get('/', (c) => c.json({

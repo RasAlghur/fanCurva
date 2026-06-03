@@ -1,7 +1,8 @@
 import { Hono } from 'hono'
 import { db } from '../lib/db'
 
-const referrals = new Hono()
+type Variables = { privy_user_id: string }
+const referrals = new Hono<{ Variables: Variables }>()
 
 // ── Point structure ────────────────────────────────
 // Diminishing returns on quantity

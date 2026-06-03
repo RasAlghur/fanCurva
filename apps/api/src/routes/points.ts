@@ -1,7 +1,8 @@
 import { Hono } from 'hono'
 import { db } from '../lib/db'
 
-const points = new Hono()
+type Variables = { privy_user_id: string }
+const points = new Hono<{ Variables: Variables }>()
 
 // GET /points/:user_id
 points.get('/:user_id', async (c) => {

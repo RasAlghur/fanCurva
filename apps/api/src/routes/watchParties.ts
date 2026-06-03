@@ -1,10 +1,12 @@
-const fs = require('fs')
-
-const watchPartiesRoute = `import { Hono } from 'hono'
+import { Hono } from 'hono'
 import { db } from '../lib/db'
 import { requireAuth } from '../middleware/auth'
 
-const watchParties = new Hono()
+type Variables = {
+  privy_user_id: string
+}
+
+const watchParties = new Hono<{ Variables: Variables }>()
 
 // GET /watch-parties — public
 watchParties.get('/', async (c) => {
@@ -85,12 +87,10 @@ watchParties.post('/', requireAuth, async (c) => {
   const host_user_id = userResult.rows[0].id
 
   const host_code = Math.random().toString(36).substring(2, 8).toUpperCase()
-
   const result = await db.query(
-    'INSERT INTO watch_parties (host_user_id, match_id, name, type, location, streaming_url, host_code, max_attendees, checkin_opens_at, checkin_closes_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, NOW(), NOW() + INTERVAL \'3 hours\') RETURNING *',
+    "INSERT INTO watch_parties (host_user_id, match_id, name, type, location, streaming_url, host_code, max_attendees, checkin_opens_at, checkin_closes_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, NOW(), NOW() + INTERVAL '3 hours') RETURNING *",
     [host_user_id, match_id, name, type || 'in_person', location ? JSON.stringify(location) : null, streaming_url || null, host_code, max_attendees || null]
   )
-
   // Award host points
   await db.query('UPDATE users SET points = points + 60, updated_at = NOW() WHERE id = $1', [host_user_id])
   await db.query(
@@ -176,17 +176,3 @@ watchParties.post('/:id/checkin', requireAuth, async (c) => {
 })
 
 export default watchParties
-`
-
-const files = {
-  'apps/api/src/routes/watchParties.ts': watchPartiesRoute,
-}
-
-Object.entries(files).forEach(([path, content]) => {
-  fs.writeFileSync(path, content)
-  console.log('Written:', path)
-})
-
-console.log('\nDone. Now add to index.ts:')
-console.log("  import watchParties from './routes/watchParties'")
-console.log("  app.route('/watch-parties', watchParties)")
