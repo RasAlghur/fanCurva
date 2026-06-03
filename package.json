@@ -1,0 +1,20 @@
+{
+  "name": "fancurva",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "dev:web": "turbo run dev --filter=web",
+    "dev:api": "turbo run dev --filter=api",
+    "dev:workers": "turbo run dev --filter=workers"
+  },
+  "devDependencies": {
+    "turbo": "^2.9.16"
+  }
+}
