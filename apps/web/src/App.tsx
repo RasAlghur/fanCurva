@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { usePrivy } from '@privy-io/react-auth'
@@ -36,7 +37,7 @@ function OnboardingRoute({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const { ready, authenticated, getAccessToken, user } = usePrivy()
+  const { ready, authenticated, getAccessToken } = usePrivy()
   const { setUser, setLoading, reset } = useUserStore()
 
   useEffect(() => {
@@ -69,7 +70,7 @@ export default function App() {
     }
 
     syncUser()
-  }, [ready, authenticated])
+  }, [ready, authenticated, reset, setLoading, getAccessToken, setUser])
 
   return (
     <BrowserRouter>

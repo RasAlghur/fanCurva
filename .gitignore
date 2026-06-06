@@ -13,6 +13,8 @@ out
 .env
 .env.local
 .env.*.local
+.env.production
+.env.development
 
 # Logs
 logs
@@ -28,3 +30,4 @@ Thumbs.db
 
 # Docker
 docker-compose.override.yml
+superbase_details.txt
