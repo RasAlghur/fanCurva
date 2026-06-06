@@ -20,7 +20,10 @@ const app = new Hono()
 app.use('*', logger())
 app.use('*', prettyJSON())
 app.use('*', cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+  origin: (origin) => {
+    const allowed = (process.env.CORS_ORIGIN || '').split(',')
+    return allowed.includes(origin) ? origin : allowed[0]
+  },
   allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowHeaders: ['Content-Type', 'Authorization', 'Idempotency-Key'],
 }))
