@@ -7,6 +7,7 @@ export default defineConfig({
     rollupOptions: {
       external: [
         '@solana-program/system',
+        '@solana-program/token',
         '@solana/kit',
         '@solana/web3.js',
         '@solana/spl-token',
@@ -16,6 +17,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: [
       '@solana-program/system',
+      '@solana-program/token',
       '@solana/kit',
     ],
   },
