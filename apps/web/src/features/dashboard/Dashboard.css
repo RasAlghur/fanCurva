@@ -1,0 +1,111 @@
+/* Only CSS that can't be easily replaced by Tailwind */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap");
+
+/* ── Base (can't be Tailwind) ────────────────────────── */
+.db-root {
+  min-height: 100vh;
+  background: #080c0a;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Ambient gradients - pure CSS effect */
+.db-root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 55% 35% at 15% 0%,
+      rgba(29, 158, 117, 0.09) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 40% 30% at 85% 100%,
+      rgba(29, 158, 117, 0.05) 0%,
+      transparent 60%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Points flying animation (JS creates this) ────────── */
+.db-points-particle {
+  position: fixed;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1d9e75;
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+  animation: db-fly-up 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  text-shadow: 0 0 12px rgba(29, 158, 117, 0.7);
+}
+
+@keyframes db-fly-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-60px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(0.85);
+  }
+}
+
+/* ── Loading spinner animation ────────────────────────── */
+@keyframes db-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.db-mini-spin {
+  width: 13px;
+  height: 13px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: db-spin 0.65s linear infinite;
+  display: inline-block;
+}
+
+/* ── Live match pulse animation ───────────────────────── */
+@keyframes db-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.7);
+  }
+}
+
+.db-match-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1d9e75;
+  animation: db-pulse 1.4s ease infinite;
+}
+
+/* ── Toast animation ──────────────────────────────────── */
+@keyframes db-toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}

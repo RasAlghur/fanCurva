@@ -1,0 +1,453 @@
+/* ============================================================
+   FanCurva — Passport NFT Card  (PORTRAIT)
+   prefix: pnft-
+   ============================================================ */
+
+/* ─── 3-D flip scene ─────────────────────────────────────── */
+.pnft-scene {
+  width: 340px;
+  height: 480px;
+  perspective: 1400px;
+  cursor: pointer;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.pnft-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.72s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pnft-card--flipped {
+  transform: rotateY(180deg);
+}
+
+/* ─── Shared face ────────────────────────────────────────── */
+.pnft-front,
+.pnft-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.pnft-back {
+  transform: rotateY(180deg);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FRONT FACE
+   ═══════════════════════════════════════════════════════════ */
+
+.pnft-f-base {
+  position: absolute;
+  inset: 0;
+  background: #0b1410;
+}
+
+/* team-colour ambient — top half */
+.pnft-f-splash {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* 4px top accent strip (passport book edge) */
+.pnft-f-strip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+}
+
+/* crowd silhouette */
+.pnft-f-crowd {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.055;
+  pointer-events: none;
+}
+
+/* overall body */
+.pnft-f-body {
+  position: absolute;
+  inset: 0;
+  padding: 22px 22px 0 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── header row ── */
+.pnft-f-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pnft-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pnft-logo__mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: #1d9e75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pnft-logo__name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1;
+}
+
+.pnft-logo__sub {
+  font-family: "Inter", sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9fe1cb;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* passport booklet corner detail */
+.pnft-f-corner {
+  width: 32px;
+  height: 32px;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0 6px 0 0;
+}
+
+/* ── fan name ── */
+.pnft-f-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+/* ── meta fields ── */
+.pnft-f-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.pnft-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pnft-field__label {
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9fe1cb;
+  opacity: 0.6;
+}
+
+.pnft-field__value {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pnft-field__flag {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.pnft-field--tier .pnft-field__value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pnft-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px 7px;
+  border-radius: 4px;
+  border: 1px solid;
+}
+
+.pnft-tier-badge__hex {
+  width: 18px;
+  height: 18px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+}
+
+.pnft-tier-badge__name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ── bottom data strip ── */
+.pnft-f-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 12px;
+  padding: 10px 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  row-gap: 0;
+  column-gap: 0;
+}
+
+.pnft-bottom-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 0;
+}
+
+.pnft-bottom-cell:nth-child(even) {
+  padding-left: 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.pnft-bottom-cell:nth-child(3),
+.pnft-bottom-cell:nth-child(4) {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pnft-bc-label {
+  font-family: "Inter", sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9fe1cb;
+  opacity: 0.5;
+}
+
+.pnft-bc-value {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1;
+}
+
+.pnft-bc-value--green {
+  color: #1d9e75;
+  font-size: 22px;
+}
+
+.pnft-bc-value--mono {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── MRZ strip at very bottom ── */
+.pnft-f-mrz {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 8px 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pnft-mrz-line {
+  font-family: "Courier New", monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.18);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BACK FACE
+   ═══════════════════════════════════════════════════════════ */
+
+.pnft-back__bg {
+  position: absolute;
+  inset: 0;
+  background: #062e1f;
+}
+
+.pnft-back__tex {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.015) 0,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 5px 5px;
+}
+
+.pnft-back__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}
+
+.pnft-back__globe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 240px;
+  opacity: 0.13;
+  pointer-events: none;
+}
+
+.pnft-back__body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 32px;
+}
+
+.pnft-back__logorow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.pnft-back__mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: rgba(29, 158, 117, 0.2);
+  border: 1.5px solid rgba(29, 158, 117, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnft-back__brandname {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.pnft-back__wc {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #9fe1cb;
+  opacity: 0.75;
+  text-align: center;
+}
+
+.pnft-back__divider {
+  width: 48px;
+  height: 1px;
+  background: rgba(159, 225, 203, 0.2);
+  margin: 4px 0;
+}
+
+.pnft-back__fp {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9fe1cb;
+  text-align: center;
+}
+
+.pnft-back__tag {
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-size: 11px;
+  color: #9fe1cb;
+  opacity: 0.55;
+  text-align: center;
+  letter-spacing: 0.07em;
+}
+
+.pnft-back__icon-row {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.35;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .pnft-scene {
+    width: 280px;
+    height: 395px;
+  }
+
+  .pnft-f-name {
+    font-size: 24px;
+  }
+
+  .pnft-f-body {
+    padding: 16px 16px 0 20px;
+  }
+}

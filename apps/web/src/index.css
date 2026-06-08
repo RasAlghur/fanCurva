@@ -1,111 +1,634 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import "tailwindcss";
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+button {
+  cursor: pointer;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+/* ─── Base font ─────────────────────────────────────────────────────── */
+.font-display {
+  font-family: "Barlow Condensed", sans-serif;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
+/* ─── Pitch-line diagonal texture ───────────────────────────────────── */
+.pitch-texture {
+  background-image: repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 38px,
+    rgba(29, 158, 117, 0.04) 38px,
+    rgba(29, 158, 117, 0.04) 40px
+  );
+}
+
+/* ─── Hero radial glow ──────────────────────────────────────────────── */
+.hero-glow {
+  background: radial-gradient(
+    ellipse 80% 60% at 60% 40%,
+    rgba(29, 158, 117, 0.13) 0%,
+    transparent 70%
+  );
+}
+
+/* ─── Staggered fade-up on load ─────────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-1 {
+  animation: fadeUp 0.7s ease both;
+}
+.anim-2 {
+  animation: fadeUp 0.7s 0.12s ease both;
+}
+.anim-3 {
+  animation: fadeUp 0.7s 0.24s ease both;
+}
+.anim-4 {
+  animation: fadeUp 0.7s 0.36s ease both;
+}
+.anim-5 {
+  animation: fadeUp 0.7s 0.48s ease both;
+}
+.anim-6 {
+  animation: fadeUp 0.7s 0.6s ease both;
+}
+
+/* ─── Passport card shimmer ─────────────────────────────────────────── */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.passport-shimmer {
+  background: linear-gradient(105deg, #0f1f18 40%, #1a3328 50%, #0f1f18 60%);
+  background-size: 200% 100%;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── Badge pulse ring ──────────────────────────────────────────────── */
+@keyframes badgePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(29, 158, 117, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(29, 158, 117, 0);
+  }
+}
+
+.badge-pulse {
+  animation: badgePulse 2.4s ease infinite;
+}
+
+/* ─── Passport card float ───────────────────────────────────────────── */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* ─── Hide scrollbar utility ────────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Primary CTA button ────────────────────────────────────────────── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.btn-primary:hover::after {
+  transform: translateX(100%);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(29, 158, 117, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ─── Gold gradient text ────────────────────────────────────────────── */
+.text-gold {
+  background: linear-gradient(135deg, #f5c842 0%, #e8a020 50%, #f5c842 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Card hover lift ───────────────────────────────────────────────── */
+.card-hover {
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.card-hover:hover {
+  border-color: rgba(29, 158, 117, 0.4);
+  transform: translateY(-3px);
+}
+
+.badge-ticker {
+  display: flex;
+  width: max-content;
+  gap: 32px;
+  padding: 0 32px;
+  animation: badge-scroll 32s linear infinite;
+  will-change: transform; /* prevents compositor jank on loop */
+}
+
+@keyframes badge-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes badge-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1.18);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.28);
+  }
+}
+
+/* PASSPORT HERO CARD */
+
+/* Hero-specific Passport Card Styles */
+.pnft-scene-hero {
+  width: 100%;
+  aspect-ratio: 340 / 480;
+  perspective: 1400px;
+  cursor: pointer;
+}
+
+.pnft-card-hero {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.72s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pnft-card-hero:hover {
+  transform: rotateY(10deg);
+}
+
+.pnft-front-hero,
+.pnft-back-hero {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.pnft-back-hero {
+  transform: rotateY(180deg);
+}
+
+/* Front face styles */
+.pnft-f-base-hero {
+  position: absolute;
+  inset: 0;
+  background: #0b1410;
+}
+
+.pnft-f-splash-hero {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.pnft-f-strip-hero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+}
+
+.pnft-f-crowd-hero {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.055;
+  pointer-events: none;
+}
+
+.pnft-f-body-hero {
+  position: absolute;
+  inset: 0;
+  padding: 22px 22px 0 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pnft-f-header-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pnft-logo-hero {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pnft-logo__mark-hero {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: #1d9e75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnft-logo__name-hero {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1;
+}
+
+.pnft-logo__sub-hero {
+  font-family: "Inter", sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9fe1cb;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+.pnft-f-corner-hero {
+  width: 32px;
+  height: 32px;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0 6px 0 0;
+}
+
+.pnft-f-name-hero {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.pnft-f-fields-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.pnft-field-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pnft-field__label-hero {
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9fe1cb;
+  opacity: 0.6;
+}
+
+.pnft-field__value-hero {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pnft-field__flag-hero {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.pnft-tier-badge-hero {
   display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px 7px;
   border-radius: 4px;
-  color: var(--text-h);
+  border: 1px solid;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.pnft-tier-badge__hex-hero {
+  width: 18px;
+  height: 18px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+}
+
+.pnft-tier-badge__name-hero {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.pnft-f-bottom-hero {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 12px;
+  padding: 10px 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pnft-bottom-cell-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 0;
+}
+
+.pnft-bottom-cell-hero:nth-child(even) {
+  padding-left: 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.pnft-bottom-cell-hero:nth-child(3),
+.pnft-bottom-cell-hero:nth-child(4) {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pnft-bc-label-hero {
+  font-family: "Inter", sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9fe1cb;
+  opacity: 0.5;
+}
+
+.pnft-bc-value-hero {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1;
+}
+
+.pnft-bc-value--green-hero {
+  color: #1d9e75;
+  font-size: 22px;
+}
+
+.pnft-bc-value--mono-hero {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pnft-f-mrz-hero {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 8px 0 12px;
+}
+
+.pnft-mrz-line-hero {
+  font-family: "Courier New", monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.18);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+/* Back face styles */
+.pnft-back__bg-hero {
+  position: absolute;
+  inset: 0;
+  background: #062e1f;
+}
+
+.pnft-back__tex-hero {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.015) 0,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 5px 5px;
+}
+
+.pnft-back__vignette-hero {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}
+
+.pnft-back__globe-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 240px;
+  opacity: 0.13;
+  pointer-events: none;
+}
+
+.pnft-back__body-hero {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 32px;
+}
+
+.pnft-back__logorow-hero {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.pnft-back__mark-hero {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: rgba(29, 158, 117, 0.2);
+  border: 1.5px solid rgba(29, 158, 117, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnft-back__brandname-hero {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.pnft-back__wc-hero {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #9fe1cb;
+  opacity: 0.75;
+  text-align: center;
+}
+
+.pnft-back__divider-hero {
+  width: 48px;
+  height: 1px;
+  background: rgba(159, 225, 203, 0.2);
+  margin: 4px 0;
+}
+
+.pnft-back__fp-hero {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9fe1cb;
+  text-align: center;
+}
+
+.pnft-back__tag-hero {
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-size: 11px;
+  color: #9fe1cb;
+  opacity: 0.55;
+  text-align: center;
+  letter-spacing: 0.07em;
+}
+
+.pnft-back__icon-row-hero {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.35;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .pnft-f-body-hero {
+    padding: 16px 16px 0 20px;
+  }
+
+  .pnft-f-name-hero {
+    font-size: 24px;
+  }
+
+  .pnft-field__value-hero {
+    font-size: 14px;
+  }
+
+  .pnft-bc-value-hero {
+    font-size: 14px;
+  }
+
+  .pnft-bc-value--green-hero {
+    font-size: 18px;
+  }
 }
