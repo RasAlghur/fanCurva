@@ -1,0 +1,144 @@
+/* ============================================================
+   DashboardLayout — shared nav for all authenticated routes
+   prefix: dl-
+   ============================================================ */
+
+.dl-root {
+  min-height: 100vh;
+  background: #080c0a;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+}
+
+.dl-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  background: rgba(8, 12, 10, 0.9);
+}
+
+/* ── Logo ── */
+.dl-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.dl-nav__mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1d9e75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dl-nav__brand {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* ── Nav links ── */
+.dl-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dl-nav__link {
+  position: relative;
+  padding: 0 14px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.dl-nav__link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dl-nav__link.active {
+  color: #fff;
+}
+
+.dl-nav__underline {
+  position: absolute;
+  bottom: 0;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: #1d9e75;
+}
+
+/* ── Logout ── */
+.dl-nav__logout {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.35);
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+
+.dl-nav__logout:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ── Page content — offset for fixed nav ── */
+.dl-content {
+  padding-top: 64px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .dl-nav {
+    padding: 0 16px;
+  }
+
+  .dl-nav__links {
+    position: static;
+    transform: none;
+    gap: 0;
+  }
+
+  .dl-nav__brand {
+    display: none;
+  }
+
+  .dl-nav__link {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+}

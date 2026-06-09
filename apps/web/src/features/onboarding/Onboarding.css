@@ -1,0 +1,545 @@
+/* ── Root ─────────────────────────────────────────────── */
+.ob-root {
+  min-height: 100vh;
+  background: #080c0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  font-family: "DM Sans", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.ob-root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    rgba(29, 158, 117, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.ob-card {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Brand ───────────────────────────────────────────── */
+.ob-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.ob-logo-mark {
+  width: 36px;
+  height: 36px;
+  background: #1d9e75;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ob-brand-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* ── Progress ────────────────────────────────────────── */
+.ob-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.ob-progress-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #5a6e66;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.ob-progress-step.active,
+.ob-progress-step.done {
+  color: #1d9e75;
+}
+
+.ob-progress-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid #1a2e28;
+  background: #0d1c18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #5a6e66;
+  flex-shrink: 0;
+}
+
+.ob-progress-dot.active,
+.ob-progress-dot.done {
+  border-color: #1d9e75;
+  background: #1d9e75;
+  color: #fff;
+}
+
+.ob-progress-line {
+  flex: 1;
+  height: 1.5px;
+  background: #1a2e28;
+  border-radius: 2px;
+}
+
+.ob-progress-line.done {
+  background: #1d9e75;
+}
+
+/* ── Typography ──────────────────────────────────────── */
+.ob-heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0 0 6px;
+  letter-spacing: 0.3px;
+}
+
+.ob-subheading {
+  font-size: 14px;
+  color: #6b8278;
+  margin: 0 0 28px;
+}
+
+/* ── Input ───────────────────────────────────────────── */
+.ob-input-wrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.ob-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: #0d1c18;
+  border: 1.5px solid #1a2e28;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.ob-input:focus {
+  border-color: #1d9e75;
+}
+
+.ob-input::placeholder {
+  color: #3d5a50;
+}
+
+/* ── Error ───────────────────────────────────────────── */
+.ob-error {
+  font-size: 13px;
+  color: #e55555;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Button ──────────────────────────────────────────── */
+.ob-btn {
+  width: 100%;
+  padding: 15px;
+  background: #1d9e75;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.ob-btn:hover {
+  background: #22b888;
+}
+
+.ob-btn:active {
+  transform: scale(0.99);
+}
+
+.ob-btn:disabled {
+  background: #1a2e28;
+  color: #3d5a50;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Back button ─────────────────────────────────────── */
+.ob-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #6b8278;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 20px;
+  transition: color 0.15s;
+}
+
+.ob-back-btn:hover {
+  color: #1d9e75;
+}
+
+/* ── Team Grid ───────────────────────────────────────── */
+.ob-teams-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ob-team-card {
+  padding: 14px 8px 12px;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    filter 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.ob-team-card:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+.ob-team-card:active {
+  transform: scale(0.97);
+}
+
+/* when any team is selected, dim the others */
+.ob-team-card.unselected {
+  filter: brightness(0.72) saturate(0.8);
+}
+
+.ob-team-card.unselected:hover {
+  filter: brightness(0.9) saturate(1);
+}
+
+.ob-team-flag {
+  font-size: 28px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 6px;
+  transition: transform 0.15s;
+}
+
+.ob-team-card:hover .ob-team-flag {
+  transform: scale(1.12);
+}
+
+.ob-team-name {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.3px;
+}
+
+.ob-team-card.selected .ob-team-name {
+  color: #fff;
+  font-weight: 700;
+}
+
+.ob-team-check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.ob-team-card.selected .ob-team-check {
+  display: flex;
+}
+
+/* accent strip — always visible */
+.ob-team-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transition: height 0.15s;
+}
+
+.ob-team-card.selected .ob-team-accent {
+  height: 4px;
+}
+
+/* glow ring on selected */
+.ob-team-card.selected {
+  box-shadow:
+    0 0 0 1.5px var(--team-accent, #1d9e75),
+    0 4px 20px -4px var(--team-accent-glow, rgba(29, 158, 117, 0.4));
+  filter: brightness(1.08);
+}
+
+/* ── Warning banner ──────────────────────────────────── */
+.ob-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251, 191, 36, 0.07);
+  border: 1px solid rgba(251, 191, 36, 0.18);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  color: #d4aa44;
+  margin-bottom: 16px;
+}
+
+/* ── Spinner ─────────────────────────────────────────── */
+.ob-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: ob-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ob-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Minting ─────────────────────────────────────────── */
+.ob-minting {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.ob-minting-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 36px;
+}
+
+.ob-minting-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.ob-minting-sub {
+  font-size: 13px;
+  color: #6b8278;
+  margin: 0 0 32px;
+}
+
+.ob-minting-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #6b8278;
+  font-size: 13px;
+}
+
+/* ── Success ─────────────────────────────────────────── */
+.ob-success {
+  text-align: center;
+  animation: ob-fade-up 0.5s ease both;
+}
+
+@keyframes ob-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Passport card ───────────────────────────────────── */
+.ob-passport {
+  position: relative;
+  border-radius: 16px;
+  padding: 28px 24px;
+  margin: 0 auto 28px;
+  max-width: 300px;
+  overflow: hidden;
+  animation: ob-passport-reveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+
+@keyframes ob-passport-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.85) rotateY(-15deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+.ob-passport-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  opacity: 0.12;
+}
+
+.ob-passport-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.ob-passport-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.ob-passport-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.ob-passport-flag {
+  font-size: 56px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.ob-passport-team {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.ob-passport-name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.ob-passport-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* ── Points badge ────────────────────────────────────── */
+.ob-points-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(29, 158, 117, 0.15);
+  border: 1px solid rgba(29, 158, 117, 0.3);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #1d9e75;
+  font-weight: 600;
+  margin-bottom: 24px;
+  animation: ob-points-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
+}
+
+@keyframes ob-points-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ob-success-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.ob-success-sub {
+  font-size: 14px;
+  color: #6b8278;
+  margin: 0 0 28px;
+}
