@@ -1,0 +1,388 @@
+FANCURVA — BADGE AND TEAM REFERENCE
+World Cup 2026
+Generated: 2026-06-08T05:47:21.260Z
+================================================================================
+
+SUMMARY
+-------
+Total badges defined : 81
+Total teams          : 48
+Groups               : A through L (12 groups)
+
+BADGES BY TYPE
+--------------
+  team                      48
+  match_day                 8
+  knockout                  6
+  trivia_streak             3
+  referral                  3
+  commemorative             3
+  city                      3
+  watch_party               2
+  starter                   1
+  neutral_fan               1
+  legend                    1
+  finals                    1
+  champion                  1
+
+BADGES BY RARITY
+----------------
+  Common (1 star)     : 65
+  Uncommon (2 stars)  : 9
+  Rare (3 stars)      : 6
+  Legendary (4 stars) : 1
+
+================================================================================
+TEAMS BY GROUP
+================================================================================
+
+GROUP A
+────────────────────────────────────────
+  🇲🇽  MEX   Mexico                         #006847
+  🇰🇷  KOR   South Korea                    #CD2E3A
+  🇿🇦  RSA   South Africa                   #007A4D
+  🇨🇿  CZE   Czechia                        #D7141A
+
+GROUP B
+────────────────────────────────────────
+  🇨🇦  CAN   Canada                         #FF0000
+  🇨🇭  SUI   Switzerland                    #D52B1E
+  🇶🇦  QAT   Qatar                          #8D1B3D
+  🇧🇦  BIH   Bosnia and Herzegovina         #002395
+
+GROUP C
+────────────────────────────────────────
+  🇧🇷  BRA   Brazil                         #009C3B
+  🇲🇦  MAR   Morocco                        #C1272D
+  🏴  SCO   Scotland                       #005EB8
+  🇭🇹  HAI   Haiti                          #00209F
+
+GROUP D
+────────────────────────────────────────
+  🇺🇸  USA   United States                  #B22234
+  🇦🇺  AUS   Australia                      #00008B
+  🇵🇾  PAR   Paraguay                       #D52B1E
+  🇹🇷  TUR   Türkiye                        #E30A17
+
+GROUP E
+────────────────────────────────────────
+  🇩🇪  GER   Germany                        #000000
+  🇪🇨  ECU   Ecuador                        #FFD100
+  🇨🇮  CIV   Ivory Coast                    #F77F00
+  🇨🇼  CUW   Curaçao                        #003DA5
+
+GROUP F
+────────────────────────────────────────
+  🇳🇱  NED   Netherlands                    #FF6600
+  🇯🇵  JPN   Japan                          #BC002D
+  🇸🇪  SWE   Sweden                         #006AA7
+  🇹🇳  TUN   Tunisia                        #E70013
+
+GROUP G
+────────────────────────────────────────
+  🇧🇪  BEL   Belgium                        #EF3340
+  🇮🇷  IRN   Iran                           #239F40
+  🇪🇬  EGY   Egypt                          #CE1126
+  🇳🇿  NZL   New Zealand                    #00247D
+
+GROUP H
+────────────────────────────────────────
+  🇪🇸  ESP   Spain                          #AA151B
+  🇺🇾  URU   Uruguay                        #5EB6E4
+  🇸🇦  KSA   Saudi Arabia                   #006C35
+  🇨🇻  CPV   Cape Verde                     #003893
+
+GROUP I
+────────────────────────────────────────
+  🇫🇷  FRA   France                         #002395
+  🇸🇳  SEN   Senegal                        #00853F
+  🇳🇴  NOR   Norway                         #EF2B2D
+  🇮🇶  IRQ   Iraq                           #CE1126
+
+GROUP J
+────────────────────────────────────────
+  🇦🇷  ARG   Argentina                      #74ACDF
+  🇦🇹  AUT   Austria                        #ED2939
+  🇩🇿  ALG   Algeria                        #006233
+  🇯🇴  JOR   Jordan                         #007A3D
+
+GROUP K
+────────────────────────────────────────
+  🇵🇹  POR   Portugal                       #006600
+  🇨🇴  COL   Colombia                       #FCD116
+  🇺🇿  UZB   Uzbekistan                     #1EB53A
+  🇨🇩  COD   DR Congo                       #007FFF
+
+GROUP L
+────────────────────────────────────────
+  🏴  ENG   England                        #CF081F
+  🇭🇷  CRO   Croatia                        #FF0000
+  🇬🇭  GHA   Ghana                          #006B3F
+  🇵🇦  PAN   Panama                         #DA121A
+
+================================================================================
+PARTICIPATION BADGES (15 total)
+================================================================================
+
+  badge_starter
+  Name     : First Step
+  Type     : starter
+  Rarity   : ★☆☆☆ (Common)
+  Earn     : Complete your first quest
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_neutral_fan
+  Name     : Neutral Fan
+  Type     : neutral_fan
+  Rarity   : ★☆☆☆ (Common)
+  Earn     : Automatically awarded when your team is eliminated from the tournament
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_watch_party
+  Name     : Watch Party
+  Type     : watch_party
+  Rarity   : ★☆☆☆ (Common)
+  Earn     : Attend or host a registered watch party
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_watch_party_host
+  Name     : Watch Party Host
+  Type     : watch_party
+  Rarity   : ★☆☆☆ (Common)
+  Earn     : Register and host a watch party
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_trivia_streak_5
+  Name     : Trivia Streak x5
+  Type     : trivia_streak
+  Rarity   : ★☆☆☆ (Common)
+  Earn     : Answer 5 trivia questions correctly in a row
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_trivia_streak_10
+  Name     : Trivia Streak x10
+  Type     : trivia_streak
+  Rarity   : ★★☆☆ (Uncommon)
+  Earn     : Answer 10 trivia questions correctly in a row
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_trivia_streak_20
+  Name     : Trivia Streak x20
+  Type     : trivia_streak
+  Rarity   : ★★★☆ (Rare)
+  Earn     : Answer 20 trivia questions correctly in a row
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_referral_1
+  Name     : Referral — 1 Friend
+  Type     : referral
+  Rarity   : ★☆☆☆ (Common)
+  Earn     : Invite 1 friend who signs up and completes their first quest
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_referral_5
+  Name     : Referral — 5 Friends
+  Type     : referral
+  Rarity   : ★★☆☆ (Uncommon)
+  Earn     : Invite 5 friends who each complete their first quest
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_referral_10
+  Name     : Referral — 10 Friends
+  Type     : referral
+  Rarity   : ★★★☆ (Rare)
+  Earn     : Invite 10 friends who each complete their first quest
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_legend_tier
+  Name     : Legend
+  Type     : legend
+  Rarity   : ★★★☆ (Rare)
+  Earn     : Earn 3,500 or more points during the tournament
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_finals_week
+  Name     : Finals Week
+  Type     : finals
+  Rarity   : ★★☆☆ (Uncommon)
+  Earn     : Complete at least 3 quests during finals week (July 14-19)
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_early_adopter
+  Name     : Early Adopter
+  Type     : commemorative
+  Rarity   : ★★☆☆ (Uncommon)
+  Earn     : Sign up and mint your passport before June 11, 2026
+  Soulbound: Yes
+  Supply   : 10000
+
+  badge_perfect_group_stage
+  Name     : Perfect Group Stage
+  Type     : commemorative
+  Rarity   : ★★★☆ (Rare)
+  Earn     : Check in during all 72 group stage matches
+  Soulbound: Yes
+  Supply   : Unlimited
+
+  badge_reaction_king
+  Name     : Reaction King
+  Type     : commemorative
+  Rarity   : ★★☆☆ (Uncommon)
+  Earn     : Post a match reaction after 10 or more matches
+  Soulbound: Yes
+  Supply   : Unlimited
+
+================================================================================
+TEAM BADGES (48 total — one per team)
+================================================================================
+  🇲🇽  MEX   Mexico Team Badge                   Group A  #006847
+  🇰🇷  KOR   South Korea Team Badge              Group A  #CD2E3A
+  🇿🇦  RSA   South Africa Team Badge             Group A  #007A4D
+  🇨🇿  CZE   Czechia Team Badge                  Group A  #D7141A
+  🇨🇦  CAN   Canada Team Badge                   Group B  #FF0000
+  🇨🇭  SUI   Switzerland Team Badge              Group B  #D52B1E
+  🇶🇦  QAT   Qatar Team Badge                    Group B  #8D1B3D
+  🇧🇦  BIH   Bosnia and Herzegovina Team Badge   Group B  #002395
+  🇧🇷  BRA   Brazil Team Badge                   Group C  #009C3B
+  🇲🇦  MAR   Morocco Team Badge                  Group C  #C1272D
+  🏴  SCO   Scotland Team Badge                 Group C  #005EB8
+  🇭🇹  HAI   Haiti Team Badge                    Group C  #00209F
+  🇺🇸  USA   United States Team Badge            Group D  #B22234
+  🇦🇺  AUS   Australia Team Badge                Group D  #00008B
+  🇵🇾  PAR   Paraguay Team Badge                 Group D  #D52B1E
+  🇹🇷  TUR   Türkiye Team Badge                  Group D  #E30A17
+  🇩🇪  GER   Germany Team Badge                  Group E  #000000
+  🇪🇨  ECU   Ecuador Team Badge                  Group E  #FFD100
+  🇨🇮  CIV   Ivory Coast Team Badge              Group E  #F77F00
+  🇨🇼  CUW   Curaçao Team Badge                  Group E  #003DA5
+  🇳🇱  NED   Netherlands Team Badge              Group F  #FF6600
+  🇯🇵  JPN   Japan Team Badge                    Group F  #BC002D
+  🇸🇪  SWE   Sweden Team Badge                   Group F  #006AA7
+  🇹🇳  TUN   Tunisia Team Badge                  Group F  #E70013
+  🇧🇪  BEL   Belgium Team Badge                  Group G  #EF3340
+  🇮🇷  IRN   Iran Team Badge                     Group G  #239F40
+  🇪🇬  EGY   Egypt Team Badge                    Group G  #CE1126
+  🇳🇿  NZL   New Zealand Team Badge              Group G  #00247D
+  🇪🇸  ESP   Spain Team Badge                    Group H  #AA151B
+  🇺🇾  URU   Uruguay Team Badge                  Group H  #5EB6E4
+  🇸🇦  KSA   Saudi Arabia Team Badge             Group H  #006C35
+  🇨🇻  CPV   Cape Verde Team Badge               Group H  #003893
+  🇫🇷  FRA   France Team Badge                   Group I  #002395
+  🇸🇳  SEN   Senegal Team Badge                  Group I  #00853F
+  🇳🇴  NOR   Norway Team Badge                   Group I  #EF2B2D
+  🇮🇶  IRQ   Iraq Team Badge                     Group I  #CE1126
+  🇦🇷  ARG   Argentina Team Badge                Group J  #74ACDF
+  🇦🇹  AUT   Austria Team Badge                  Group J  #ED2939
+  🇩🇿  ALG   Algeria Team Badge                  Group J  #006233
+  🇯🇴  JOR   Jordan Team Badge                   Group J  #007A3D
+  🇵🇹  POR   Portugal Team Badge                 Group K  #006600
+  🇨🇴  COL   Colombia Team Badge                 Group K  #FCD116
+  🇺🇿  UZB   Uzbekistan Team Badge               Group K  #1EB53A
+  🇨🇩  COD   DR Congo Team Badge                 Group K  #007FFF
+  🏴  ENG   England Team Badge                  Group L  #CF081F
+  🇭🇷  CRO   Croatia Team Badge                  Group L  #FF0000
+  🇬🇭  GHA   Ghana Team Badge                    Group L  #006B3F
+  🇵🇦  PAN   Panama Team Badge                   Group L  #DA121A
+
+================================================================================
+KNOCKOUT STAGE BADGES (7 total)
+================================================================================
+
+  badge_round_of_32
+  Name     : Round of 32
+  Stage    : Round of 32
+  Rarity   : ★★☆☆
+  Dates    : 2026-06-28T00:00:00Z to 2026-07-01T23:59:59Z
+  Earn     : Check in during any Round of 32 match
+
+  badge_round_of_16
+  Name     : Round of 16
+  Stage    : Round of 16
+  Rarity   : ★★☆☆
+  Dates    : 2026-07-02T00:00:00Z to 2026-07-05T23:59:59Z
+  Earn     : Check in during any Round of 16 match
+
+  badge_quarter_final
+  Name     : Quarter Final
+  Stage    : Quarter Final
+  Rarity   : ★★☆☆
+  Dates    : 2026-07-08T00:00:00Z to 2026-07-09T23:59:59Z
+  Earn     : Check in during any Quarter Final match
+
+  badge_semi_final
+  Name     : Semi Final
+  Stage    : Semi Final
+  Rarity   : ★★★☆
+  Dates    : 2026-07-14T00:00:00Z to 2026-07-15T23:59:59Z
+  Earn     : Check in during either Semi Final match
+
+  badge_third_place
+  Name     : Third Place Match
+  Stage    : Third Place
+  Rarity   : ★★☆☆
+  Dates    : 2026-07-18T00:00:00Z to 2026-07-18T23:59:59Z
+  Earn     : Check in during the Third Place match on July 18
+
+  badge_finals
+  Name     : Finals Badge
+  Stage    : Final
+  Rarity   : ★★★☆
+  Dates    : 2026-07-19T00:00:00Z to 2026-07-19T23:59:59Z
+  Earn     : Check in during the World Cup Final on July 19
+
+  badge_champion
+  Name     : Champion
+  Stage    : Champion
+  Rarity   : ★★★★
+  Dates    : 2026-07-19T00:00:00Z to 2026-07-20T23:59:59Z
+  Earn     : Support the winning team throughout the tournament
+
+================================================================================
+CITY BADGES (3 total)
+================================================================================
+
+  badge_city_usa
+  Country  : USA
+  Earn     : Complete 3 USA host city quests
+  Venues   : MetLife Stadium NY, SoFi Stadium LA, AT&T Stadium Dallas, Lumen Field Seattle, Empower Field Denver, Gillette Stadium Boston, Arrowhead Stadium Kansas City, Allegiant Stadium Las Vegas, Lincoln Financial Field Philadelphia, NRG Stadium Houston
+
+  badge_city_canada
+  Country  : Canada
+  Earn     : Complete 3 Canada host city quests
+  Venues   : BC Place, Vancouver, BMO Field, Toronto
+
+  badge_city_mexico
+  Country  : Mexico
+  Earn     : Complete 3 Mexico host city quests
+  Venues   : Estadio Azteca, Mexico City, Estadio BBVA, Monterrey, Estadio Akron, Guadalajara
+
+================================================================================
+MATCH-DAY BADGES (8 sample — full schedule = 104 badges)
+================================================================================
+  m001      vs          2026-06-11  SoFi Stadium, Los Angeles
+  m002      vs          2026-06-12  AT&T Stadium, Dallas
+  m003      vs          2026-06-12  MetLife Stadium, New York
+  m004      vs          2026-06-13  Hard Rock Stadium, Miami
+  m005      vs          2026-06-13  Empower Field, Denver
+  m006      vs          2026-06-14  Gillette Stadium, Boston
+  m007      vs          2026-06-14  Lumen Field, Seattle
+  m008      vs          2026-06-15  Arrowhead Stadium, Kansas City
+
+  Note: The full tournament has 104 matches = 104 unique match-day badges.
+  Generate the full match schedule separately and add to matchDayBadges array.
+
+================================================================================
+END OF BADGE REFERENCE
+================================================================================
